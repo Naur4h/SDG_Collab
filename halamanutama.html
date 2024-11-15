@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Energy</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+       
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+       
+        header {
+            background-color: #4CAF50;
+            padding: 10px;
+            color: white;
+            text-align: left;
+        }
+
+       
+        .navbar h1 {
+            display: inline;
+            font-size: 24px;
+        }
+
+        .navbar nav {
+            float: right;
+        }
+
+        .navbar nav a {
+            color: white;
+            padding: 0 10px;
+            text-decoration: none;
+        }
+
+        
+        .hero {
+            background-image: url('gambar/bg 1.png'); 
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            max-width: 600px;
+            line-height: 1.2;
+        }
+
+       
+        .info-section, .manfaat-section, .examples-section {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+
+        
+        .info-section h3, .manfaat-section h3, .examples-section h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+
+       
+        .info-section p, .manfaat-section p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        
+        .manfaat-section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background-color: #e6ffe6;
+            gap: 20px;
+        }
+
+        
+        .manfaat-section img {
+            max-width: 200px;
+            height: auto;
+        }
+
+       
+        .manfaat-section ul {
+            font-size: 18px;
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+            color: #555;
+            max-width: 500px;
+            margin: 0;
+        }
+
+        .manfaat-section ul li {
+            margin-bottom: 8px;
+        }
+
+       
+        .examples-section {
+            background-color: #f0f0f0;
+            padding: 40px 20px;
+        }
+
+      
+        .examples {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .example {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        
+        .example img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .example h4 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #4CAF50;
+        }
+
+        .example p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .example:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+   
+    <header>
+        <div class="navbar">
+            <h1>GREEN ENERGY</h1>
+            <nav>
+                <a href="Tips.html">TIPS</a>
+                <a href="kalkulator.html">KALKULATOR</a>
+                <a href="peta.html">PETA</a>
+            </nav>
+        </div>
+    </header>
+
+   
+    <section class="hero">
+        <h2>Ayo Beralih ke Energi Terbarukan</h2>
+    </section>
+
+   
+    <section id="apa-itu" class="info-section">
+        <h3>Apa Itu Energi Terbarukan?</h3>
+        <p>Energi terbarukan adalah energi yang berasal dari sumber daya alam yang dapat diperbarui, seperti sinar matahari, angin, dan air. Sumber energi ini ramah lingkungan dan dapat digunakan berulang kali.</p>
+        <p>Energi terbarukan ini merupakan sumber energi yang berasal dari alam yang mampu dibuat kembali secara bebas, serta mampu diperbarui terus-menerus dan tak terbatas. Energi terbarukan mampu diciptakan dengan memanfaatkan perkembangan teknologi yang semakin canggih, sehingga mampu menjadi sumber energi alternatif.</p>
+    </section>
+
+    <section id="manfaat" class="manfaat-section">
+        <img src="gambar/icon panel.png" alt="Icon Panel">
+        <div>
+            <h3>Pentingnya Energi Terbarukan</h3>
+            <ul>
+                <li>1. Mengurangi emisi karbon dan perubahan iklim</li>
+                <li>2. Sumber daya yang tidak habis</li>
+                <li>3. Mengurangi polusi</li>
+                <li>4. Menjamin energi berkelanjutan</li>
+            </ul>
+        </div>
+    </section>
+
+   
+    <section id="contoh" class="examples-section">
+        <h3>Contoh Energi Terbarukan</h3>
+        <div class="examples">
+            <div class="example">
+                <img src="gambar/angin.jpg" alt="Tenaga Angin">
+                <h4>Tenaga Angin</h4>
+                <p>Energi ini memanfaatkan kekuatan angin untuk menghasilkan listrik.</p>
+            </div>
+            <div class="example">
+                <img src="gambar/panas bumi.jpg" alt="Panas Bumi">
+                <h4>Panas Bumi</h4>
+                <p>Energi panas bumi berasal dari panas dalam bumi dan digunakan untuk pembangkit listrik.</p>
+            </div>
+            <div class="example">
+                <img src="gambar/panel surya.jpeg" alt="Panel Surya">
+                <h4>Sinar Matahari</h4>
+                <p>Energi matahari dapat digunakan dengan panel surya untuk menghasilkan listrik.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
