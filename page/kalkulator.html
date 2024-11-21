@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Perbandingan Kendaraan</title>
+    <style>
+
+        header {
+            background-color: #4CAF50;
+            padding: 10px;
+            color: rgb(255, 255, 255);
+            text-align: left;
+        }
+
+       
+        .navbar h1 {
+            display: inline;
+            font-size: 24px;
+            color:#fff;
+        }
+
+        .navbar nav {
+            float: right;
+        }
+
+        .navbar nav a {
+            color: rgb(255, 255, 255);
+            padding: 0 10px;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #6fff65;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .catatan {
+            background: #ffeb3b;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+        .kelompok-form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .tombol {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .tombol:hover {
+            background: #0056b3;
+        }
+        .hasil {
+            margin-top: 20px;
+            padding: 20px;
+            background: #e9ecef;
+            border-radius: 5px;
+        }
+        .hasil p {
+            margin: 0;
+            font-size: 18px;
+        }
+        .kesimpulan {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<header>
+    <div class="navbar">
+        <h1>GREEN ENERGY</h1>
+        <nav>
+            <a href="halamanutama.html">HOME</a>
+            <a href="Tips.html">TIPS</a>
+            <a href="kalkulator.html">KALKULATOR</a>
+            <a href="peta.html">PETA</a>
+        </nav>
+    </div>
+</header>
+
+<body>
+    <div class="container">
+        <div class="catatan">
+            <ul>
+                <li>Tarif listrik per kilowatt-hour (kWh) adalah sekitar Rp 2.467 per kWh.</li>
+            </ul>
+        </div>
+        <h1>Kalkulator Perbandingan Kendaraan</h1>
+        <div class="kelompok-form">
+            <label for="jenisBahanBakar">Pilih Jenis Bahan Bakar:</label>
+            <select id="jenisBahanBakar">
+                <option value="10000">Pertalite (Rp 10,000 per liter)</option>
+                <option value="12100">Pertamax (Rp 12,100 per liter)</option>
+                <option value="13500">Pertamax Turbo (Rp 13,500 per liter)</option>
+                <option value="13050">Dexlite (Rp 13,050 per liter)</option>
+                <option value="13440">Pertamina Dex (Rp 13,440 per liter)</option>
+            </select>
+        </div>
+        <div class="kelompok-form">
+            <label for="konsumsiBensin">Konsumsi Kendaraan Bensin (km per liter):</label>
+            <input type="number" id="konsumsiBensin" placeholder="Masukkan konsumsi kendaraan bensin (km per liter)">
+        </div>
+        <div class="kelompok-form">
+            <label for="jarakHarian">Jarak Tempuh Harian (km per hari):</label>
+            <input type="number" id="jarakHarian" placeholder="Masukkan jarak tempuh harian (km per hari)">
+        </div>
+        <div class="kelompok-form">
+            <label for="jenisPengisianDaya">Pilih Jenis Pengisian Daya:</label>
+            <select id="jenisPengisianDaya">
+                <option value="25000">Fast Charging (Rp 25,000 per pengisian)</option>
+                <option value="57000">Ultrafast Charging (Rp 57,000 per pengisian)</option>
+            </select>
+        </div>
+        <div class="kelompok-form">
+            <label for="konsumsiListrik">Konsumsi Kendaraan Listrik (km per kWh):</label>
+            <input type="number" id="konsumsiListrik" placeholder="Masukkan konsumsi kendaraan listrik (km per kWh)">
+        </div>
+        <div class="kelompok-form">
+            <label for="kapasitasBaterai">Kapasitas Baterai Kendaraan Listrik (kWh):</label>
+            <input type="number" id="kapasitasBaterai" placeholder="Masukkan kapasitas baterai kendaraan listrik (kWh)">
+        </div>
+        <button class="tombol" onclick="hitungPerbandingan()">Hitung</button>
+        <div class="hasil" id="hasil"></div>
+    </div>
+
+    <script>
+      
+        async function fetchData() {
+            try {
+                const response = await fetch('http://localhost:5000/kalkulator');
+                const data = await response.json();
+    
+               
+                console.log(data);
+            } catch (error) {
+            console.error('Gagal mengambil data:', error);
+        }
+    }
+  
+</script>
+</body>
+</html>
