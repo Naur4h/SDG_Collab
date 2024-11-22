@@ -12,7 +12,7 @@ Website ini bertujuan menjadi sumber edukasi mengenai energi terbarukan, memberi
 
 # FITUR WEB
  - Website ini menyediakan fitur interaktif untuk menghitung potensi penghematan energi dengan menggunakan teknologi energi terbarukan. <br>
- - Website ini menyediakan fitur Peta Lokasi Penggunaan Energi Terbarukan, peta yang menampilkan wilayah-wilayah yang sudah menggunakan energi terbarukan
+ - Website ini menyediakan fitur Peta Lokasi Penggunaan Energi Terbarukan, peta yang menampilkan wilayah-wilayah yang sudah menggunakan energi terbarukan.
 
 # TERIMA KASIH
 Tidak terlupakan yaitu ucapan terimakasih kepada mentor kita yaitu: Muhammad Shofian Tsauri, yang senantiasa membantu kelancarannya pembuatan website ini dan juga kepada Para Speaker HITLAB yang luar biasa telah memberikan ilmu yang bermanfaat kepada kami. serta ucapan terimakasih kepada HITLAB's Chief Project Officer, HITLAB's Project Manager Tech Class, HITLAB's Project Manager Career Class, HITLAB's Secretary, HITLAB's Partnership & Event Head, and the other HITLAB's Staffs.
