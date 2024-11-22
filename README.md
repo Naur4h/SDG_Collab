@@ -11,7 +11,7 @@ Our Collaboration for the Final Project
 Website ini bertujuan menjadi sumber edukasi mengenai energi terbarukan, memberikan informasi dan solusi yang mudah diakses untuk mengurangi ketergantungan terhadap energi fosil dan memberikan pemahaman mendalam kepada masyarakat mengenai pentingnya energi terbarukan.
 
 # FITUR WEB
- - Website ini menyediakan fitur interaktif untuk menghitung potensi penghematan energi dengan menggunakan teknologi energi terbarukan. <br>
+ - Website ini menyediakan fitur Kalkulator untuk menghitung potensi penghematan energi dengan menggunakan teknologi energi terbarukan. <br>
  - Website ini menyediakan fitur Peta Lokasi Penggunaan Energi Terbarukan, peta yang menampilkan wilayah-wilayah yang sudah menggunakan energi terbarukan.
 
 # TERIMA KASIH
