@@ -21,7 +21,7 @@
 
        
         header {
-            background-color: #4CAF50;
+            background-color: #4CAF50 ;
             padding: 10px;
             color: white;
             text-align: left;
@@ -45,7 +45,7 @@
 
         
         .hero {
-            background-image: url('gambar/bg 1.png'); 
+            background-image: url('../gambar/bg1.png');
             display: flex;
             flex-direction: column;
             align-items: left;
@@ -175,6 +175,7 @@
         <div class="navbar">
             <h1>GREEN ENERGY</h1>
             <nav>
+                <a href="halamanutama.html">HOME</a>
                 <a href="Tips.html">TIPS</a>
                 <a href="kalkulator.html">KALKULATOR</a>
                 <a href="peta.html">PETA</a>
@@ -195,7 +196,7 @@
     </section>
 
     <section id="manfaat" class="manfaat-section">
-        <img src="gambar/icon panel.png" alt="Icon Panel">
+        <img src="../gambar/icon_panel.png" alt="Icon Panel">
         <div>
             <h3>Pentingnya Energi Terbarukan</h3>
             <ul>
@@ -212,21 +213,36 @@
         <h3>Contoh Energi Terbarukan</h3>
         <div class="examples">
             <div class="example">
-                <img src="gambar/angin.jpg" alt="Tenaga Angin">
+                <img src="../gambar/angin.jpg" alt="Tenaga Angin">
                 <h4>Tenaga Angin</h4>
                 <p>Energi ini memanfaatkan kekuatan angin untuk menghasilkan listrik.</p>
             </div>
             <div class="example">
-                <img src="gambar/panas bumi.jpg" alt="Panas Bumi">
+                <img src="../gambar/panas_bumi.jpg" alt="Panas Bumi">
                 <h4>Panas Bumi</h4>
                 <p>Energi panas bumi berasal dari panas dalam bumi dan digunakan untuk pembangkit listrik.</p>
             </div>
             <div class="example">
-                <img src="gambar/panel surya.jpeg" alt="Panel Surya">
+                <img src="../gambar/panel_surya.jpeg" alt="Panel Surya">
                 <h4>Sinar Matahari</h4>
                 <p>Energi matahari dapat digunakan dengan panel surya untuk menghasilkan listrik.</p>
             </div>
         </div>
     </section>
+    <script>
+      
+        async function fetchData() {
+            try {
+                const response = await fetch('http://localhost:5000/halamanutama');
+                const data = await response.json();
+    
+               
+                console.log(data);
+            } catch (error) {
+            console.error('Gagal mengambil data:', error);
+        }
+    }
+  
+</script>
 </body>
 </html>

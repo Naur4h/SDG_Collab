@@ -5,16 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator Perbandingan Kendaraan</title>
     <style>
+
+        header {
+            background-color: #4CAF50;
+            padding: 10px;
+            color: rgb(255, 255, 255);
+            text-align: left;
+        }
+
+       
+        .navbar h1 {
+            display: inline;
+            font-size: 24px;
+            color:#fff;
+        }
+
+        .navbar nav {
+            float: right;
+        }
+
+        .navbar nav a {
+            color: rgb(255, 255, 255);
+            padding: 0 10px;
+            text-decoration: none;
+        }
+
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
-        .wadah {
+        .container {
             max-width: 800px;
             margin: 50px auto;
-            background: #fff;
+            background: #6fff65;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
@@ -80,8 +105,21 @@
         }
     </style>
 </head>
+
+<header>
+    <div class="navbar">
+        <h1>GREEN ENERGY</h1>
+        <nav>
+            <a href="halamanutama.html">HOME</a>
+            <a href="Tips.html">TIPS</a>
+            <a href="kalkulator.html">KALKULATOR</a>
+            <a href="peta.html">PETA</a>
+        </nav>
+    </div>
+</header>
+
 <body>
-    <div class="wadah">
+    <div class="container">
         <div class="catatan">
             <ul>
                 <li>Tarif listrik per kilowatt-hour (kWh) adalah sekitar Rp 2.467 per kWh.</li>
@@ -124,5 +162,21 @@
         <button class="tombol" onclick="hitungPerbandingan()">Hitung</button>
         <div class="hasil" id="hasil"></div>
     </div>
+
+    <script>
+      
+        async function fetchData() {
+            try {
+                const response = await fetch('http://localhost:5000/kalkulator');
+                const data = await response.json();
+    
+               
+                console.log(data);
+            } catch (error) {
+            console.error('Gagal mengambil data:', error);
+        }
+    }
+  
+</script>
 </body>
 </html>

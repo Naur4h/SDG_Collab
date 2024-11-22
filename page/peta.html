@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta Penggunaan Energi Terbarukan</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+       }
+
+       body {
+            font-family: Arial, sans-serif;
+           
+       }
+
+       header {
+            background-color: #4CAF50;
+            padding: 10px;
+            color: white;
+            text-align: left;
+        }
+
+       
+        .navbar h1 {
+            display: inline;
+            font-size: 24px;
+        }
+
+        .navbar nav {
+            float: right;
+        }
+
+        .navbar nav a {
+            color: white;
+            padding: 0 10px;
+            text-decoration: none;
+        }
+
+        #map {
+            height: 100vh;
+            margin: 0;
+        }
+
+       
+        @media only screen and (max-width: 768px) {
+            #map {
+                height: 90vh; 
+            }
+
+            body {
+                
+                margin: 0;
+                padding: 0;
+                font-size: 14px; 
+            }
+        }
+
+        @media only screen and (max-width: 375px) {
+            #map {
+                height: 85vh; 
+            }
+        }
+    </style>
+</head>
+<header>
+    <div class="navbar">
+        <h1>GREEN ENERGY</h1>
+        <nav>
+            <a href="halamanutama.html">HOME</a>
+            <a href="Tips.html">TIPS</a>
+            <a href="kalkulator.html">KALKULATOR</a>
+            <a href="peta.html">PETA</a>
+        </nav>
+    </div>
+</header>
+<body>
+    <div id="map"></div>
+    <script>
+        
+        const map = L.map('map').setView([-2.548926, 118.0148634], 5);
+
+       
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+       
+        const lokasiEnergiTerbarukan = [
+            {
+                nama: "PLTS Kupang",
+                deskripsi: "Pembangkit Listrik Tenaga Surya di Kupang, NTT.",
+                koordinat: [-10.1788, 123.5977]
+            },
+            {
+                nama: "PLTB Sidrap",
+                deskripsi: "Pembangkit Listrik Tenaga Bayu di Sidrap, Sulawesi Selatan.",
+                koordinat: [-3.9509, 119.8777]
+            },
+            {
+                nama: "PLTMG Sorong",
+                deskripsi: "Pembangkit Listrik Tenaga Mesin Gas dengan Energi Terbarukan di Sorong, Papua Barat.",
+                koordinat: [-0.8762, 131.2558]
+            },
+            {
+                nama: "PLTA Cirata",
+                deskripsi: "Pembangkit Listrik Tenaga Air di Cirata, Jawa Barat.",
+                koordinat: [-6.8086, 107.3266]
+            }
+        ];
+
+        
+        lokasiEnergiTerbarukan.forEach(lokasi => {
+            L.marker(lokasi.koordinat)
+                .addTo(map)
+                .bindPopup(`<b>${lokasi.nama}</b><br>${lokasi.deskripsi}`);
+        });
+      
+      async function fetchData() {
+          try {
+              const response = await fetch('http://localhost:5000/peta');
+              const data = await response.json();
+  
+             
+              console.log(data);
+          } catch (error) {
+          console.error('Gagal mengambil data:', error);
+      }
+  }
+
+    </script>
+</body>
+</html>

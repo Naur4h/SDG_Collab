@@ -4,9 +4,34 @@
    Ayo Sayangi Bumi Kita
   </title>
   <style>
+
+     header {
+            background-color: #4CAF50;
+            padding: 10px;
+            color: white;
+            text-align: left;
+        }
+
+       
+        .navbar h1 {
+            display: inline;
+            font-size: 24px;
+            color:#fff;
+        }
+
+        .navbar nav {
+            float: right;
+        }
+
+        .navbar nav a {
+            color: white;
+            padding: 0 10px;
+            text-decoration: none;
+        }
+
    body {
             font-family: Arial, sans-serif;
-            background-color: #E6E6FA;
+            background-color: #34e185;
             margin: 0;
             padding: 0;
             text-align: center;
@@ -58,6 +83,17 @@
         }
   </style>
  </head>
+ <header>
+    <div class="navbar">
+        <h1>GREEN ENERGY</h1>
+        <nav>
+            <a href="halamanutama.html">HOME</a>
+            <a href="Tips.html">TIPS</a>
+            <a href="kalkulator.html">KALKULATOR</a>
+            <a href="peta.html">PETA</a>
+        </nav>
+    </div>
+</header>
  <body>
   <div class="container">
    <h1>
@@ -67,7 +103,7 @@
     Berikut cara yang bisa kita lakukan
    </p>
    <div class="card">
-    <img height="200" src="gambar/hemat energi.jpg" width="300"/>
+    <img height="200" src="../gambar/hemat_energi.jpg" width="300"/>
     <h3>
      Hemat energi
     </h3>
@@ -76,7 +112,7 @@
     </p>
    </div>
    <div class="card">
-    <img height="200" src="gambar/fasilitas umum.jpg" width="300"/>
+    <img height="200" src="../gambar/fasilitas_umum.jpg" width="300"/>
     <h3>
      Gunakan Fasilitas Umum
     </h3>
@@ -85,7 +121,7 @@
     </p>
    </div>
    <div class="card">
-    <img height="200" src="gambar/terbarukan.jpeg" width="300"/>
+    <img height="200" src="../gambar/terbarukan.jpeg" width="300"/>
     <h3>
      Mengurangi Penggunaan Energi Fosil
     </h3>
@@ -94,7 +130,7 @@
     </p>
    </div>
    <div class="card">
-    <img height="200" src="gambar/daur ulang.jpg" width="300"/>
+    <img height="200" src="../gambar/daur_ulang.jpg" width="300"/>
     <h3>
      Daur Ulang dan Kurangi Limbah
     </h3>
@@ -103,7 +139,7 @@
     </p>
    </div>
    <div class="card">
-    <img  height="200" src="gambar/tanaman.jpg" width="300"/>
+    <img  height="200" src="../gambar/tanaman.jpg" width="300"/>
     <h3>
      Menanam Pohon
     </h3>
@@ -112,7 +148,7 @@
     </p>
    </div>
    <div class="card">
-    <img height="200" src="gambar/produk lokal.jpeg" width="300"/>
+    <img height="200" src="../gambar/produk_lokal.jpeg" width="300"/>
     <h3>
      Mendukung Produk Lokal
     </h3>
@@ -121,5 +157,20 @@
     </p>
    </div>
   </div>
+  <script>
+      
+    async function fetchData() {
+        try {
+            const response = await fetch('http://localhost:5000/tips');
+            const data = await response.json();
+
+           
+            console.log(data);
+        } catch (error) {
+        console.error('Gagal mengambil data:', error);
+    }
+}
+
+</script>
  </body>
 </html>
