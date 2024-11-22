@@ -94,69 +94,52 @@
         </nav>
     </div>
 </header>
- <body>
-  <div class="container">
-   <h1>
-    Ayo Sayangi Bumi Kita
-   </h1>
-   <p class="subtitle">
-    Berikut cara yang bisa kita lakukan
-   </p>
-   <div class="card">
-    <img height="200" src="../gambar/hemat_energi.jpg" width="300"/>
-    <h3>
-     Hemat energi
-    </h3>
-    <p>
-     Matikan peralatan listrik saat tidak digunakan untuk menghemat energi dan mengurangi tagihan listrik.
-    </p>
-   </div>
-   <div class="card">
-    <img height="200" src="../gambar/fasilitas_umum.jpg" width="300"/>
-    <h3>
-     Gunakan Fasilitas Umum
-    </h3>
-    <p>
-     Untuk mengurangi polusi dan kemacetan, gunakan transportasi umum atau berbagi kendaraan dengan teman.
-    </p>
-   </div>
-   <div class="card">
-    <img height="200" src="../gambar/terbarukan.jpeg" width="300"/>
-    <h3>
-     Mengurangi Penggunaan Energi Fosil
-    </h3>
-    <p>
-     Beralih ke energi terbarukan, seperti tenaga angin, surya, atau air.
-    </p>
-   </div>
-   <div class="card">
-    <img height="200" src="../gambar/daur_ulang.jpg" width="300"/>
-    <h3>
-     Daur Ulang dan Kurangi Limbah
-    </h3>
-    <p>
-     Mengurangi penggunaan barang sekali pakai dan mendaur ulang barang yang bisa dipakai kembali.
-    </p>
-   </div>
-   <div class="card">
-    <img  height="200" src="../gambar/tanaman.jpg" width="300"/>
-    <h3>
-     Menanam Pohon
-    </h3>
-    <p>
-     Menanam pohon membantu menyerap karbon dioksida dan menyediakan oksigen.
-    </p>
-   </div>
-   <div class="card">
-    <img height="200" src="../gambar/produk_lokal.jpeg" width="300"/>
-    <h3>
-     Mendukung Produk Lokal
-    </h3>
-    <p>
-     Membeli produk lokal untuk mengurangi jejak karbon dan mendukung perekonomian lokal.
-    </p>
-   </div>
-  </div>
+<body>
+    <div class="container">
+        <h1>Ayo Sayangi Bumi Kita</h1>
+        <p class="subtitle">Berikut cara yang bisa kita lakukan</p>
+        <div class="card">
+            <img src="../gambar/hemat_energi.jpg" height="200" width="300" />
+            <h3>Hemat energi</h3>
+            <p>Matikan peralatan listrik saat tidak digunakan untuk menghemat energi dan mengurangi tagihan listrik.</p>
+        </div>
+        <div class="card">
+            <img src="../gambar/fasilitas_umum.jpg" height="200" width="300" />
+            <h3>Gunakan Fasilitas Umum</h3>
+            <p>Untuk mengurangi polusi dan kemacetan, gunakan transportasi umum atau berbagi kendaraan dengan teman.</p>
+        </div>
+        <div class="card">
+            <img src="../gambar/terbarukan.jpeg" height="200" width="300" />
+            <h3>Mengurangi Penggunaan Energi Fosil</h3>
+            <p>Beralih ke energi terbarukan, seperti tenaga angin, surya, atau air.</p>
+        </div>
+        <div class="card">
+            <img src="../gambar/daur_ulang.jpg" height="200" width="300" />
+            <h3>Daur Ulang dan Kurangi Limbah</h3>
+            <p>Mengurangi penggunaan barang sekali pakai dan mendaur ulang barang yang bisa dipakai kembali.</p>
+        </div>
+        <div class="card">
+            <img src="../gambar/tanaman.jpg" height="200" width="300" />
+            <h3>Menanam Pohon</h3>
+            <p>Menanam pohon membantu menyerap karbon dioksida dan menyediakan oksigen.</p>
+        </div>
+        <div class="card">
+            <img src="../gambar/produk_lokal.jpeg" height="200" width="300" />
+            <h3>Mendukung Produk Lokal</h3>
+            <p>Membeli produk lokal untuk mengurangi jejak karbon dan mendukung perekonomian lokal.</p>
+        </div>
+    </div>
+    <script>
+        async function fetchData() {
+            try {
+                const response = await fetch('http://localhost:5000/tips');
+                const data = await response.json();
+                console.log(data);
+            } catch (error) {
+                console.error('Gagal mengambil data:', error);
+            }
+        }
+    </script>
   <script>
       
     async function fetchData() {
