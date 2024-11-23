@@ -4,32 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator Perbandingan Kendaraan</title>
-    <style>
+    <script src="../kalkulator.js"></script>
 
+    <style>
+      
         header {
             background-color: #4CAF50;
             padding: 10px;
             color: rgb(255, 255, 255);
             text-align: left;
         }
-
-       
         .navbar h1 {
             display: inline;
             font-size: 24px;
             color:#fff;
         }
-
         .navbar nav {
             float: right;
         }
-
         .navbar nav a {
             color: rgb(255, 255, 255);
             padding: 0 10px;
             text-decoration: none;
         }
-
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -103,21 +100,8 @@
             font-weight: bold;
             color: #007bff;
         }
-
-        @media (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 12px;
-  }
-}
     </style>
 </head>
-
 <header>
     <div class="navbar">
         <h1>GREEN ENERGY</h1>
@@ -174,21 +158,38 @@
         <button class="tombol" onclick="hitungPerbandingan()">Hitung</button>
         <div class="hasil" id="hasil"></div>
     </div>
-
-    <script>
-      
-        async function fetchData() {
-            try {
-                const response = await fetch('http://localhost:5000/kalkulator');
-                const data = await response.json();
     
-               
-                console.log(data);
-            } catch (error) {
-            console.error('Gagal mengambil data:', error);
+ <!-- jaga jaga -->
+    <script>function hitungPerbandingan() {
+        const hargaBensin = parseFloat(document.getElementById('jenisBahanBakar').value);
+        const konsumsiBensin = parseFloat(document.getElementById('konsumsiBensin').value);
+        const jarakHarian = parseFloat(document.getElementById('jarakHarian').value);
+        const jenisPengisianDaya = parseFloat(document.getElementById('jenisPengisianDaya').value);
+        const tarifListrik = 2467; // Tetap sesuai dengan catatan
+        const konsumsiListrik = parseFloat(document.getElementById('konsumsiListrik').value);
+        const kapasitasBaterai = parseFloat(document.getElementById('kapasitasBaterai').value);
+
+        if (isNaN(hargaBensin) || isNaN(konsumsiBensin) || isNaN(jarakHarian) || isNaN(jenisPengisianDaya) || isNaN(tarifListrik) || isNaN(konsumsiListrik) || isNaN(kapasitasBaterai)) {
+            alert('Harap masukkan angka yang valid di semua kolom.');
+            return;
         }
+
+        const biayaHarianBensin = (hargaBensin * jarakHarian) / konsumsiBensin;
+        const biayaHarianListrik = (tarifListrik * jarakHarian) / konsumsiListrik;
+        const biayaPengisianPerHari = (jarakHarian / (konsumsiListrik * kapasitasBaterai)) * jenisPengisianDaya;
+        const totalBiayaHarianListrik = biayaHarianListrik + biayaPengisianPerHari;
+
+        const penghematan = biayaHarianBensin - totalBiayaHarianListrik;
+        const lebihHematListrik = totalBiayaHarianListrik < biayaHarianBensin;
+
+        const hasilDiv = document.getElementById('hasil');
+        hasilDiv.innerHTML = `
+            <p>Biaya per Hari Kendaraan Bensin: Rp ${biayaHarianBensin.toFixed(2)}</p>
+            <p>Biaya per Hari Kendaraan Listrik: Rp ${totalBiayaHarianListrik.toFixed(2)}</p>
+            <p class="kesimpulan">${lebihHematListrik ? 'Kendaraan Listrik lebih hemat.' : 'Kendaraan Bensin lebih hemat.'}</p>
+            <p class="kesimpulan">Anda bisa menghemat Rp ${Math.abs(penghematan).toFixed(2)} per hari.</p>
+        `;
     }
-  
 </script>
 </body>
 </html>

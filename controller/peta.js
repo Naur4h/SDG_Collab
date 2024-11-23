@@ -16,7 +16,7 @@ var data = {
             "koordinat": [-0.8762, 131.2558]
         },
         {
-            "nama": "PLTA Cirata",
+            "name": "PLTA Cirata",
             "deskripsi": "Pembangkit Listrik Tenaga Air di Cirata, Jawa Barat.",
             "koordinat": [-6.8086, 107.3266]
         }

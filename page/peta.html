@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -81,16 +82,15 @@
 <body>
     <div id="map"></div>
     <script>
-        
+   
         const map = L.map('map').setView([-2.548926, 118.0148634], 5);
 
-       
+      
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 18,
-            attribution: '© OpenStreetMap contributors'
+            attribution: ' OpenStreetMap contributors'
         }).addTo(map);
 
-       
         const lokasiEnergiTerbarukan = [
             {
                 nama: "PLTS Kupang",
@@ -114,25 +114,33 @@
             }
         ];
 
-        
+     
         lokasiEnergiTerbarukan.forEach(lokasi => {
             L.marker(lokasi.koordinat)
                 .addTo(map)
                 .bindPopup(`<b>${lokasi.nama}</b><br>${lokasi.deskripsi}`);
         });
-      
-      async function fetchData() {
-          try {
-              const response = await fetch('http://localhost:5000/peta');
-              const data = await response.json();
-  
-             
-              console.log(data);
-          } catch (error) {
-          console.error('Gagal mengambil data:', error);
-      }
-  }
 
+       
+        async function fetchData() {
+    try {
+        const response = await fetch('http://localhost:5000/peta');
+        const data = await response.json();
+        let lokasi = await data["the location of new energy"]
+        console.log(lokasi)
+        L.marker(lokasi.koordinat)
+        .addTo(map)
+        .bindPopup(`<b>${lokasi.nama}</b><br>${lokasi.deskripsi }`
+        );
+        
+        
+
+    } catch (error) {
+        console.error('Gagal mengambil data:', error);
+    }
+}
+        
+        fetchData();
     </script>
 </body>
 </html>

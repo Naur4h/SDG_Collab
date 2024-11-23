@@ -200,61 +200,64 @@
         <h2>Ayo Beralih ke Energi Terbarukan</h2>
     </section>
 
-   
     <section id="apa-itu" class="info-section">
         <h3>Apa Itu Energi Terbarukan?</h3>
-        <p>Energi terbarukan adalah energi yang berasal dari sumber daya alam yang dapat diperbarui, seperti sinar matahari, angin, dan air. Sumber energi ini ramah lingkungan dan dapat digunakan berulang kali.</p>
-        <p>Energi terbarukan ini merupakan sumber energi yang berasal dari alam yang mampu dibuat kembali secara bebas, serta mampu diperbarui terus-menerus dan tak terbatas. Energi terbarukan mampu diciptakan dengan memanfaatkan perkembangan teknologi yang semakin canggih, sehingga mampu menjadi sumber energi alternatif.</p>
+        <div id="paragaf"></div>
     </section>
 
     <section id="manfaat" class="manfaat-section">
-        <img src="../gambar/icon_panel.png" alt="Icon Panel">
+        <img id="png" src="../gambar/icon panel.png" alt="Icon Panel">
         <div>
             <h3>Pentingnya Energi Terbarukan</h3>
-            <ul>
-                <li>1. Mengurangi emisi karbon dan perubahan iklim</li>
-                <li>2. Sumber daya yang tidak habis</li>
-                <li>3. Mengurangi polusi</li>
-                <li>4. Menjamin energi berkelanjutan</li>
-            </ul>
+            <ul id="list"></ul>
         </div>
     </section>
 
    
     <section id="contoh" class="examples-section">
         <h3>Contoh Energi Terbarukan</h3>
-        <div class="examples">
-            <div class="example">
-                <img src="../gambar/angin.jpg" alt="Tenaga Angin">
-                <h4>Tenaga Angin</h4>
-                <p>Energi ini memanfaatkan kekuatan angin untuk menghasilkan listrik.</p>
-            </div>
-            <div class="example">
-                <img src="../gambar/panas_bumi.jpg" alt="Panas Bumi">
-                <h4>Panas Bumi</h4>
-                <p>Energi panas bumi berasal dari panas dalam bumi dan digunakan untuk pembangkit listrik.</p>
-            </div>
-            <div class="example">
-                <img src="../gambar/panel_surya.jpeg" alt="Panel Surya">
-                <h4>Sinar Matahari</h4>
-                <p>Energi matahari dapat digunakan dengan panel surya untuk menghasilkan listrik.</p>
-            </div>
+        <div class="examples" id="examples">
+
         </div>
     </section>
     <script>
-      
+
         async function fetchData() {
             try {
                 const response = await fetch('http://localhost:5000/halamanutama');
                 const data = await response.json();
-    
-               
+        let paragaf = data["what is new energy"]
+        let list = await data["the important of new energy"]
+        let example = await data["the examples of new energy"]
+        let png = await data["advantages png"]
+
+        
+        let jpg = await document.getElementById("png"); 
+        jpg.setAttribute("src",`../${png}`);
+        document.getElementById("paragaf").innerHTML = paragaf;
+        document.getElementById("list").innerHTML = await list.map(item => `<li>${item}</li>`).join('');
+        document.getElementById("examples").innerHTML = await example.map(item => ` <div class="example">
+                <img src="../${item.gambar}" alt="Tenaga Angin">
+                <h4>${item.title}</h4>
+                <p>${item.paragraf}</p>
+            </div>`).join('')
+
+           
+
+                console.log(paragaf);
                 console.log(data);
+                console.log(list);
+                console.log(example);
+                console.log(document.getElementById("png"));
+                
+
+
             } catch (error) {
             console.error('Gagal mengambil data:', error);
         }
     }
   
+  fetchData()
 </script>
 </body>
 </html>
